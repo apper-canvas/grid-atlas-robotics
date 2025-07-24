@@ -85,13 +85,14 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <button
+<button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+            className="md:hidden p-3 rounded-xl hover:bg-gray-100 transition-colors duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
             <ApperIcon
               name={isMobileMenuOpen ? "X" : "Menu"}
-              className="h-6 w-6 text-gray-700"
+              className="h-7 w-7 text-gray-700"
             />
           </button>
         </div>
@@ -106,30 +107,39 @@ const Header = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-white border-t border-gray-100 shadow-lg"
           >
-            <div className="px-4 py-6 space-y-4">
+<div className="px-6 py-8 space-y-6">
               {navigationItems.map((item) => (
                 <button
                   key={item.href}
-                  onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left py-2 text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200"
+                  onClick={() => {
+                    scrollToSection(item.href);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="block w-full text-left py-4 px-2 text-lg text-gray-700 hover:text-primary-600 font-medium transition-colors duration-200 rounded-lg hover:bg-gray-50 min-h-[44px] flex items-center"
                 >
                   {item.label}
                 </button>
               ))}
-              <div className="pt-4 space-y-3">
+              <div className="pt-6 space-y-4 border-t border-gray-200">
                 <Button
                   variant="secondary"
-                  size="sm"
-                  className="w-full"
-                  onClick={() => scrollToSection("#contact")}
+                  size="lg"
+                  className="w-full min-h-[48px] text-base"
+                  onClick={() => {
+                    scrollToSection("#contact");
+                    setIsMobileMenuOpen(false);
+                  }}
                 >
                   Get Quote
                 </Button>
                 <Button
                   variant="primary"
-                  size="sm"
-                  className="w-full"
-                  onClick={() => scrollToSection("#contact")}
+                  size="lg"
+                  className="w-full min-h-[48px] text-base"
+                  onClick={() => {
+                    scrollToSection("#contact");
+                    setIsMobileMenuOpen(false);
+                  }}
                 >
                   Schedule Demo
                 </Button>

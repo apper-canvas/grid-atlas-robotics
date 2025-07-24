@@ -19,11 +19,11 @@ const Button = forwardRef(({
     danger: 'bg-red-500 text-white hover:bg-red-600 focus-visible:ring-red-500 hover:shadow-lg hover:scale-105 hover:-translate-y-0.5 active:scale-95 active:translate-y-0'
   }
   
-  const sizes = {
-    sm: 'px-3 py-2 text-sm rounded-md',
-    md: 'px-4 py-2 text-sm rounded-lg',
-    lg: 'px-6 py-3 text-base rounded-lg',
-    xl: 'px-8 py-4 text-lg rounded-xl'
+const sizes = {
+    sm: 'px-4 py-3 text-sm rounded-md min-h-[44px]',
+    md: 'px-5 py-3 text-sm rounded-lg min-h-[44px]',
+    lg: 'px-7 py-4 text-base rounded-lg min-h-[48px]',
+    xl: 'px-8 py-5 text-lg rounded-xl min-h-[52px]'
   }
 
   const shimmerEffect = variant === 'primary' ? 'before:absolute before:inset-0 before:-translate-x-full before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent hover:before:translate-x-full before:transition-transform before:duration-700' : '';
