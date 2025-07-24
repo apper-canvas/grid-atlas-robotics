@@ -5,19 +5,21 @@ import ImageShowcase from "@/components/organisms/ImageShowcase";
 import Features from "@/components/organisms/Features";
 import Specifications from "@/components/organisms/Specifications";
 import About from "@/components/organisms/About";
+import MadeByHumans from "@/components/organisms/MadeByHumans";
 import Testimonials from "@/components/organisms/Testimonials";
 import NewsletterSignup from "@/components/organisms/NewsletterSignup";
 import Contact from "@/components/organisms/Contact";
 
 const HomePage = () => {
-return (
-<>
+  return (
+    <>
       <Hero />
       <HumanoidShowcase />
       <ImageShowcase />
       <Features />
       <Specifications />
       <About />
+      <MadeByHumans />
       <Testimonials />
       <NewsletterSignup />
       <Contact />
