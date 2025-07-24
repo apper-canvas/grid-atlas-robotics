@@ -5,31 +5,34 @@ import TestimonialCard from "@/components/molecules/TestimonialCard";
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "Atlas has transformed our manufacturing line. The precision and reliability are unmatched. We've seen a 40% increase in production efficiency since implementation.",
+      quote: "Since implementing Atlas, we've achieved a remarkable 30% increase in production efficiency. The precision and adaptability have revolutionized our manufacturing processes, delivering ROI beyond our expectations.",
       author: "Sarah Chen",
-      company: "TechManufacturing Inc.",
+      role: "VP Operations",
+      company: "Axion Manufacturing",
       logo: "building"
     },
     {
-      quote: "The integration was seamless, and the AI capabilities continue to impress us daily. Atlas learns and adapts to our specific processes better than any solution we've tried.",
+      quote: "Atlas has been a game-changer for workplace safety. We've seen a 40% reduction in workplace injuries since deployment. The system's intelligent safety protocols have transformed our logistics operations.",
       author: "Michael Rodriguez",
-      company: "Precision Industries",
-      logo: "factory"
+      role: "Director Logistics", 
+      company: "GlobalShip",
+      logo: "truck"
     },
     {
-      quote: "Safety was our primary concern, and Atlas exceeded all expectations. Our workers feel confident collaborating with the system, and zero incidents in 18 months speaks volumes.",
-      author: "Emily Foster",
-      company: "Advanced Robotics Corp",
-      logo: "shield"
+      quote: "The adaptability of Atlas to our complex lab protocols has been extraordinary. It seamlessly integrates with our research workflows, maintaining the precision required for our scientific processes while improving efficiency.",
+      author: "Dr. Amara Patel",
+      role: "Lead Scientist",
+      company: "BioAdvance Research",
+      logo: "microscope"
     },
     {
-      quote: "The ROI has been exceptional. Atlas paid for itself within 8 months through increased efficiency and reduced operational costs. Best investment we've made in years.",
-      author: "David Kim",
-      company: "Future Factory Solutions",
+      quote: "As a mid-size business, we needed accessible automation solutions. Atlas delivered beyond expectations - intuitive implementation, exceptional support, and measurable improvements in operational efficiency from day one.",
+      author: "Jason Lee",
+      role: "CEO",
+      company: "Innovative Solutions Inc.",
       logo: "trending-up"
     }
   ];
-
   return (
     <section id="testimonials" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
