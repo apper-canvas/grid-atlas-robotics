@@ -21,7 +21,7 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <motion.div
+<motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -78,21 +78,21 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
-          >
+>
             <Button
               variant="primary"
               size="lg"
               onClick={() => scrollToSection("contact")}
-              className="w-full sm:w-auto"
+              className="w-full sm:w-auto btn-hover transform transition-all duration-300 hover:shadow-glow-lg"
             >
               <ApperIcon name="Calendar" className="h-5 w-5 mr-2" />
               Schedule Demo
             </Button>
-            <Button
+<Button
               variant="secondary"
               size="lg"
               onClick={() => scrollToSection("features")}
-              className="w-full sm:w-auto"
+              className="w-full sm:w-auto btn-hover transform transition-all duration-300 hover:shadow-lg"
             >
               <ApperIcon name="Play" className="h-5 w-5 mr-2" />
               Watch Atlas in Action
@@ -106,18 +106,36 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="grid grid-cols-1 sm:grid-cols-3 gap-8 pt-16 max-w-2xl mx-auto"
           >
-            <div className="text-center">
+<motion.div 
+              className="text-center"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
               <div className="text-3xl font-bold gradient-text">99.9%</div>
               <div className="text-gray-600 mt-1">Uptime Reliability</div>
-            </div>
-            <div className="text-center">
+            </motion.div>
+<motion.div 
+              className="text-center"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               <div className="text-3xl font-bold gradient-text">24/7</div>
               <div className="text-gray-600 mt-1">Continuous Operation</div>
-            </div>
-            <div className="text-center">
+            </motion.div>
+<motion.div 
+              className="text-center"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
               <div className="text-3xl font-bold gradient-text">50%</div>
               <div className="text-gray-600 mt-1">Cost Reduction</div>
-            </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>
