@@ -6,6 +6,7 @@ import Features from "@/components/organisms/Features";
 import Specifications from "@/components/organisms/Specifications";
 import About from "@/components/organisms/About";
 import Testimonials from "@/components/organisms/Testimonials";
+import NewsletterSignup from "@/components/organisms/NewsletterSignup";
 import Contact from "@/components/organisms/Contact";
 
 const HomePage = () => {
@@ -18,6 +19,7 @@ return (
       <Specifications />
       <About />
       <Testimonials />
+      <NewsletterSignup />
       <Contact />
     </>
   );
