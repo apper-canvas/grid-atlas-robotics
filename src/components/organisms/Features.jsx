@@ -3,38 +3,66 @@ import { motion } from "framer-motion";
 import FeatureCard from "@/components/molecules/FeatureCard";
 
 const Features = () => {
-  const features = [
+const features = [
     {
-      icon: "Zap",
-      title: "Advanced AI Processing",
-      description: "Powered by next-generation neural networks for real-time decision making and adaptive learning in complex industrial environments."
+      icon: "Navigation",
+      title: "AI-Powered Navigation",
+      description: "Advanced computer vision and SLAM technology enable autonomous navigation through complex environments with real-time obstacle avoidance and path optimization."
     },
     {
-      icon: "Shield",
-      title: "Enterprise-Grade Safety",
-      description: "Built-in safety protocols and fail-safes ensure secure operation around human workers with certified industrial compliance."
+      icon: "ShieldCheck",
+      title: "Safety Protocols",
+      description: "Multi-layered safety systems with emergency stops, collision detection, and certified compliance ensure secure operation in human-shared workspaces."
     },
     {
-      icon: "Wrench",
-      title: "Precision Manufacturing",
-      description: "Sub-millimeter accuracy in assembly tasks with advanced force feedback and quality control integration."
+      icon: "Brain",
+      title: "Adaptive Learning",
+      description: "Machine learning algorithms continuously adapt to new tasks and environments, improving performance through experience and reducing programming overhead."
     },
     {
-      icon: "Battery",
-      title: "Extended Operation",
-      description: "24-hour continuous operation capability with hot-swappable power systems and predictive maintenance alerts."
+      icon: "Target",
+      title: "Precision Handling",
+      description: "Sub-millimeter accuracy with advanced force feedback sensors and precision actuators for delicate assembly and quality-critical operations."
     },
     {
-      icon: "Wifi",
-      title: "IoT Integration",
-      description: "Seamless connectivity with existing factory systems, real-time monitoring, and cloud-based analytics platform."
+      icon: "Clock",
+      title: "24/7 Operation",
+      description: "Continuous operation capability with predictive maintenance, hot-swappable components, and automated charging systems for maximum uptime."
     },
     {
-      icon: "Users",
-      title: "Human Collaboration",
-      description: "Designed for safe human-robot collaboration with intuitive interfaces and natural interaction capabilities."
+      icon: "Cpu",
+      title: "Edge Computing",
+      description: "Onboard AI processing reduces latency and enables real-time decision making without relying on cloud connectivity for critical operations."
     }
   ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { 
+      opacity: 0, 
+      y: 30,
+      scale: 0.9
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
 
   return (
     <section id="features" className="py-20 bg-white">
