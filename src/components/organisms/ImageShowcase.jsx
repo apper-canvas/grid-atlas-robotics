@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import ApperIcon from "@/components/ApperIcon";
 import Button from "@/components/atoms/Button";
 
@@ -15,7 +15,7 @@ const ImageShowcase = () => {
     { id: "research", label: "Research", icon: "FlaskConical" }
   ];
 
-  const imageGallery = [
+const imageGallery = [
     {
       id: 1,
       category: "manufacturing",
@@ -26,7 +26,10 @@ const ImageShowcase = () => {
       beforeDesc: "Human workers handling delicate components with potential for errors",
       afterDesc: "Consistent precision with 99.9% accuracy and 24/7 operation",
       environment: "Automotive Manufacturing Plant",
-      improvements: ["300% faster assembly", "99.5% fewer defects", "Zero workplace injuries"]
+      improvements: ["300% faster assembly", "99.5% fewer defects", "Zero workplace injuries"],
+      src: "https://picsum.photos/800/600?random=1",
+      srcSet: "https://picsum.photos/400/300?random=1 400w, https://picsum.photos/800/600?random=1 800w, https://picsum.photos/1200/900?random=1 1200w",
+      sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
     },
     {
       id: 2,
@@ -38,7 +41,10 @@ const ImageShowcase = () => {
       beforeDesc: "Human inspectors checking parts with limited consistency",
       afterDesc: "Computer vision detecting microscopic defects instantly",
       environment: "Electronics Manufacturing Facility",
-      improvements: ["500% faster inspection", "10x defect detection rate", "Consistent 24/7 operation"]
+      improvements: ["500% faster inspection", "10x defect detection rate", "Consistent 24/7 operation"],
+      src: "https://picsum.photos/800/600?random=2",
+      srcSet: "https://picsum.photos/400/300?random=2 400w, https://picsum.photos/800/600?random=2 800w, https://picsum.photos/1200/900?random=2 1200w",
+      sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
     },
     {
       id: 3,
@@ -50,7 +56,10 @@ const ImageShowcase = () => {
       beforeDesc: "Workers manually sorting and organizing inventory items",
       afterDesc: "Automated sorting with real-time tracking and optimization",
       environment: "Distribution Center",
-      improvements: ["400% faster sorting", "99.8% inventory accuracy", "Reduced labor costs by 60%"]
+      improvements: ["400% faster sorting", "99.8% inventory accuracy", "Reduced labor costs by 60%"],
+      src: "https://picsum.photos/800/600?random=3",
+      srcSet: "https://picsum.photos/400/300?random=3 400w, https://picsum.photos/800/600?random=3 800w, https://picsum.photos/1200/900?random=3 1200w",
+      sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
     },
     {
       id: 4,
@@ -62,7 +71,10 @@ const ImageShowcase = () => {
       beforeDesc: "Multiple workers and equipment needed for heavy items",
       afterDesc: "Single Atlas unit handling 50kg payloads safely",
       environment: "Industrial Warehouse",
-      improvements: ["Zero lifting injuries", "50% faster material flow", "Reduced equipment needs"]
+      improvements: ["Zero lifting injuries", "50% faster material flow", "Reduced equipment needs"],
+      src: "https://picsum.photos/800/600?random=4",
+      srcSet: "https://picsum.photos/400/300?random=4 400w, https://picsum.photos/800/600?random=4 800w, https://picsum.photos/1200/900?random=4 1200w",
+      sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
     },
     {
       id: 5,
@@ -74,7 +86,10 @@ const ImageShowcase = () => {
       beforeDesc: "Researchers handling delicate samples and equipment manually",
       afterDesc: "Robotic precision in sample handling and equipment operation",
       environment: "Biotech Research Lab",
-      improvements: ["10x sample processing speed", "Zero contamination risk", "24/7 research capability"]
+      improvements: ["10x sample processing speed", "Zero contamination risk", "24/7 research capability"],
+      src: "https://picsum.photos/800/600?random=5",
+      srcSet: "https://picsum.photos/400/300?random=5 400w, https://picsum.photos/800/600?random=5 800w, https://picsum.photos/1200/900?random=5 1200w",
+      sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
     },
     {
       id: 6,
@@ -86,7 +101,10 @@ const ImageShowcase = () => {
       beforeDesc: "Restricted access due to hazardous conditions",
       afterDesc: "Full operational capability in extreme environments",
       environment: "Chemical Research Facility",
-      improvements: ["100% worker safety", "Continuous operation", "Access to restricted areas"]
+      improvements: ["100% worker safety", "Continuous operation", "Access to restricted areas"],
+      src: "https://picsum.photos/800/600?random=6",
+      srcSet: "https://picsum.photos/400/300?random=6 400w, https://picsum.photos/800/600?random=6 800w, https://picsum.photos/1200/900?random=6 1200w",
+      sizes: "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
     }
   ];
 
@@ -183,7 +201,7 @@ const ImageShowcase = () => {
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {filteredImages.map((image, index) => (
-              <motion.div
+<motion.div
                 key={image.id}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -191,18 +209,17 @@ const ImageShowcase = () => {
                 className="group cursor-pointer"
                 onClick={() => openModal(image)}
               >
-                <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 group-hover:shadow-xl group-hover:scale-105">
-                  {/* Image Placeholder */}
-                  <div className="relative h-64 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-primary-600/5"></div>
-                    <div className="relative z-10 text-center">
-                      <ApperIcon name="Bot" size={60} className="text-primary-400 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
-                      <div className="space-y-2">
-                        <div className="h-2 bg-primary-300 rounded-full w-20 mx-auto animate-pulse"></div>
-                        <div className="h-2 bg-primary-200 rounded-full w-16 mx-auto animate-pulse animation-delay-500"></div>
-                      </div>
-                    </div>
-                    
+                <div className="bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 group-hover:shadow-xl group-hover:scale-105 card-hover">
+                  {/* Optimized Image with Lazy Loading */}
+<div className="relative h-64 overflow-hidden">
+                    <img
+                      src={image.src}
+                      srcSet={image.srcSet}
+                      sizes={image.sizes}
+                      alt={`${image.title} - ${image.description}`}
+                      className="w-full h-full object-cover"
+                      loading={index < 2 ? "eager" : "lazy"}
+                    />
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="absolute bottom-4 left-4 right-4">
@@ -280,6 +297,18 @@ const ImageShowcase = () => {
 
                 {/* Modal Content */}
                 <div className="p-6 space-y-8">
+{/* High-Quality Image for Modal */}
+                  <div className="mb-6">
+                    <img
+                      src={selectedImage.src}
+                      srcSet={selectedImage.srcSet}
+                      sizes="(max-width: 768px) 100vw, 800px"
+                      alt={`${selectedImage.title} - Detailed view`}
+                      className="w-full h-64 md:h-80 object-cover rounded-xl"
+                      loading="eager"
+                    />
+                  </div>
+
                   {/* Before/After Comparison */}
                   <div className="grid md:grid-cols-2 gap-6">
                     {/* Before */}
